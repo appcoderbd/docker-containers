@@ -1,0 +1,12 @@
+services:
+  memcached:
+    image: memcached:latest
+    container_name: memcached
+    ports:
+      - "11211:11211"
+    volumes:
+      - ./data:/data
+    command: ["memcached", "-m", "64", "-vv"]
+
+volumes:
+  data:
